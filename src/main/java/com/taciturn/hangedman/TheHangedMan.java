@@ -27,7 +27,9 @@ public class TheHangedMan {
         boolean success = false;
         if (attempts.add(triedCharacter)) {
             for (int i = 0; i < answer.length(); i++){
-                if (answer.charAt(i) == triedCharacter) {
+                char currentCharacter = normalizeCharacter(String.valueOf(answer)).charAt(i);
+
+                if (currentCharacter == triedCharacter) {
                     progress[i] = triedCharacter;
                     success = true;
                 }
